@@ -1,0 +1,500 @@
+{"src": "How can I send a signal from a python program?", "tgt": "os.kill(os.getpid(), signal.SIGUSR1)"}
+{"src": "Decode Hex String in Python 3", "tgt": "bytes.fromhex('4a4b4c').decode('utf-8')"}
+{"src": "check if all elements in a list are identical", "tgt": "all(x == myList[0] for x in myList)"}
+{"src": "Format string dynamically", "tgt": "print('%*s : %*s' % (20, 'Python', 20, 'Very Good'))"}
+{"src": "How to convert a string from CP-1251 to UTF-8?", "tgt": "d.decode('cp1251').encode('utf8')"}
+{"src": "How I can get rid of None values in dictionary?", "tgt": "res = {k: v for k, v in list(kwargs.items()) if v is not None}"}
+{"src": "How I can get rid of None values in dictionary?", "tgt": "res = dict((k, v) for k, v in kwargs.items() if v is not None)"}
+{"src": "Python: how to get the final output of multiple system commands?", "tgt": "subprocess.check_output('ps -ef | grep something | wc -l', shell=True)"}
+{"src": "splitting and concatenating a string", "tgt": "\"\"\"\"\"\".join(['a', 'b', 'c'])"}
+{"src": "Finding the intersection between two series in Pandas", "tgt": "pd.Series(list(set(s1).intersection(set(s2))))"}
+{"src": "Sending http headers with python", "tgt": "client.send('HTTP/1.0 200 OK\\r\\n')"}
+{"src": "Python -Remove Time from Datetime String", "tgt": "then = datetime.datetime.strptime(when, '%Y-%m-%d').date()"}
+{"src": "How do I split a multi-line string into multiple lines?", "tgt": "inputString.split('\\n')"}
+{"src": "How do I split a multi-line string into multiple lines?", "tgt": "' a \\n b \\r\\n c '.split('\\n')"}
+{"src": "How to join mixed list (array) (with integers in it) in Python?", "tgt": "\"\"\":\"\"\".join(str(x) for x in b)"}
+{"src": "Fastest way to get the first object from a queryset in django?", "tgt": "Entry.objects.filter()[:1].get()"}
+{"src": "How to calculate the sum of all columns of a 2D numpy array (efficiently)", "tgt": "a.sum(axis=1)"}
+{"src": "Python, how to enable all warnings?", "tgt": "warnings.simplefilter('always')"}
+{"src": "Python printing without commas", "tgt": "print(' '.join(map(str, l)))"}
+{"src": "OSError: [WinError 193] %1 is not a valid Win32 application", "tgt": "subprocess.call(['python.exe', 'hello.py', 'htmlfilename.htm'])"}
+{"src": "How can I parse a time string containing milliseconds in it with python?", "tgt": "time.strptime('30/03/09 16:31:32.123', '%d/%m/%y %H:%M:%S.%f')"}
+{"src": "How can I convert a string with dot and comma into a float number in Python", "tgt": "my_float = float(my_string.replace(',', ''))"}
+{"src": "How can I convert a string with dot and comma into a float number in Python", "tgt": "float('123,456.908'.replace(',', ''))"}
+{"src": "In Python script, how do I set PYTHONPATH?", "tgt": "sys.path.append('/path/to/whatever')"}
+{"src": "Determining the unmatched portion of a string using a regex in Python", "tgt": "re.split('(\\\\W+)', 'Words, words, words.')"}
+{"src": "How to read data from Excel and write it to text file line by line?", "tgt": "file = open('Output.txt', 'a')"}
+{"src": "download a file over HTTP", "tgt": "urllib.request.urlretrieve('http://www.example.com/songs/mp3.mp3', 'mp3.mp3')"}
+{"src": "download a file over HTTP", "tgt": "u = urllib.request.urlopen(url)\nf = open(file_name, 'wb')\nmeta = u.info()\nfile_size = int(meta.getheaders('Content-Length')[0])\nprint(('Downloading: %s Bytes: %s' % (file_name, file_size)))\nfile_size_dl = 0\nblock_sz = 8192\nwhile True:\n    buffer = u.read(block_sz)\n    if (not buffer):\n        break\n    file_size_dl += len(buffer)\n    f.write(buffer)\n    status = ('%10d  [%3.2f%%]' % (file_size_dl, ((file_size_dl * 100.0) / file_size)))\n    status = (status + (chr(8) * (len(status) + 1)))\n    print(status, end=' ')\nf.close()"}
+{"src": "download a file over HTTP", "tgt": "response = urllib.request.urlopen('http://www.example.com/')\nhtml = response.read()"}
+{"src": "download a file over HTTP", "tgt": "r = requests.get(url)"}
+{"src": "download a file over HTTP", "tgt": "response = requests.get(url, stream=True)\nwith open('10MB', 'wb') as handle:\n    for data in tqdm(response.iter_content()):\n        handle.write(data)"}
+{"src": "Python's argparse to show program's version with prog and version string formatting", "tgt": "parser.add_argument('--version', action='version', version='%(prog)s 2.0')"}
+{"src": "Remove key from dictionary in Python returning new dictionary", "tgt": "{i: d[i] for i in d if i != 'c'}"}
+{"src": "Merging two pandas dataframes", "tgt": "pd.merge(split_df, csv_df, on=['key'], suffixes=('_left', '_right'))"}
+{"src": "Python regular expression split() string", "tgt": "s.split(' ', 4)"}
+{"src": "How to read keyboard-input?", "tgt": "input('Enter your input:')"}
+{"src": "Auto reloading python Flask app upon code changes", "tgt": "app.run(debug=True)"}
+{"src": "Python save list and read data from file", "tgt": "pickle.dump(mylist, open('save.txt', 'wb'))"}
+{"src": "Numpy: Multiplying a matrix with a 3d tensor -- Suggestion", "tgt": "scipy.tensordot(P, T, axes=[1, 1]).swapaxes(0, 1)"}
+{"src": "How to create nested lists in python?", "tgt": "numpy.zeros((3, 3, 3))"}
+{"src": "Python: Cut off the last word of a sentence?", "tgt": "\"\"\" \"\"\".join(content.split(' ')[:-1])"}
+{"src": "Numpy convert scalars to arrays", "tgt": "x = np.asarray(x).reshape(1, -1)[(0), :]"}
+{"src": "Finding the sum of a nested list of ints", "tgt": "sum(sum(i) if isinstance(i, list) else i for i in L)"}
+{"src": "Convert hex to float", "tgt": "struct.unpack('!f', '470FC614'.decode('hex'))[0]"}
+{"src": "Python: Perform an operation on each dictionary value", "tgt": "my_dict.update((x, y * 2) for x, y in list(my_dict.items()))"}
+{"src": "Running bash script from within python", "tgt": "subprocess.call('sleep.sh', shell=True)"}
+{"src": "How would you make a comma-separated string from a list?", "tgt": "\"\"\",\"\"\".join(l)"}
+{"src": "How would you make a comma-separated string from a list?", "tgt": "myList = ','.join(map(str, myList))"}
+{"src": "Print a list in reverse order with range()?", "tgt": "list(reversed(list(range(10))))"}
+{"src": "How can i subtract two strings in python?", "tgt": "print('lamp, bag, mirror'.replace('bag,', ''))"}
+{"src": "python reverse tokens in a string", "tgt": "\"\"\".\"\"\".join(s.split('.')[::-1])"}
+{"src": "converting epoch time with milliseconds to datetime", "tgt": "datetime.datetime.fromtimestamp(s).strftime('%Y-%m-%d %H:%M:%S.%f')"}
+{"src": "converting epoch time with milliseconds to datetime", "tgt": "time.strftime('%Y-%m-%d %H:%M:%S', time.gmtime(1236472051807 / 1000.0))"}
+{"src": "Getting the date of 7 days ago from current date in python", "tgt": "(datetime.datetime.now() - datetime.timedelta(days=7)).date()"}
+{"src": "How can I sum a column of a list?", "tgt": "print(sum(row[column] for row in data))"}
+{"src": "How can I sum a column of a list?", "tgt": "[sum(row[i] for row in array) for i in range(len(array[0]))]"}
+{"src": "How to encode text to base64 in python", "tgt": "base64.b64encode(bytes('your string', 'utf-8'))"}
+{"src": "How can I combine dictionaries with the same keys in python?", "tgt": "dict((k, [d[k] for d in dicts]) for k in dicts[0])"}
+{"src": "How can I combine dictionaries with the same keys in python?", "tgt": "{k: [d[k] for d in dicts] for k in dicts[0]}"}
+{"src": "How do I get the url parameter in a Flask view", "tgt": "request.args['myParam']"}
+{"src": "Identify duplicate values in a list in Python", "tgt": "[k for k, v in list(Counter(mylist).items()) if v > 1]"}
+{"src": "How do you modify sys.path in Google App Engine (Python)?", "tgt": "sys.path.insert(1, os.path.join(os.path.dirname(__file__), 'apps'))"}
+{"src": "How do you modify sys.path in Google App Engine (Python)?", "tgt": "sys.path.append(os.path.join(os.path.dirname(__file__), 'subdir'))"}
+{"src": "Insert Null into SQLite3 in Python", "tgt": "db.execute(\"INSERT INTO present VALUES('test2', ?, 10)\", (None,))"}
+{"src": "Flattening a shallow list in Python", "tgt": "[image for menuitem in list_of_menuitems for image in menuitem]"}
+{"src": "Append elements of a set to a list in Python", "tgt": "a.extend(b)"}
+{"src": "Append elements of a set to a list in Python", "tgt": "a.extend(list(b))"}
+{"src": "Python, Pandas : write content of DataFrame into text File", "tgt": "np.savetxt('c:\\\\data\\\\np.txt', df.values, fmt='%d')"}
+{"src": "Python, Pandas : write content of DataFrame into text File", "tgt": "df.to_csv('c:\\\\data\\\\pandas.txt', header=None, index=None, sep=' ', mode='a')"}
+{"src": "how to get the last part of a string before a certain character?", "tgt": "print(x.rpartition('-')[0])"}
+{"src": "how to get the last part of a string before a certain character?", "tgt": "print(x.rsplit('-', 1)[0])"}
+{"src": "FTP upload files Python", "tgt": "ftp.storlines('STOR ' + filename, open(filename, 'r'))"}
+{"src": "Write value to hidden element with selenium python script", "tgt": "browser.execute_script(\"document.getElementById('XYZ').value+='1'\")"}
+{"src": "Combining two numpy arrays to form an array with the largest value from each array", "tgt": "np.maximum([2, 3, 4], [1, 5, 2])"}
+{"src": "How to print an entire list while not starting by the first item", "tgt": "print(l[3:] + l[:3])"}
+{"src": "loop over files", "tgt": "for fn in os.listdir('.'):\n    if os.path.isfile(fn):\n        pass"}
+{"src": "loop over files", "tgt": "for (root, dirs, filenames) in os.walk(source):\n    for f in filenames:\n        pass"}
+{"src": "Create random list of integers in Python", "tgt": "[int(1000 * random.random()) for i in range(10000)]"}
+{"src": "Using %f with strftime() in Python to get microseconds", "tgt": "datetime.datetime.now().strftime('%H:%M:%S.%f')"}
+{"src": "Build a GQL query (for Google App Engine) that has a condition on ReferenceProperty", "tgt": "db.GqlQuery('SELECT * FROM Schedule WHERE station = $1', foo.key())"}
+{"src": "How to filter rows in pandas by regex", "tgt": "df.b.str.contains('^f')"}
+{"src": "What is the best way to print a table with delimiters in Python", "tgt": "print('\\n'.join('\\t'.join(str(col) for col in row) for row in tab))"}
+{"src": "Pandas: Delete rows based on multiple columns values", "tgt": "df.set_index(list('BC')).drop(tuples, errors='ignore').reset_index()"}
+{"src": "String Formatting in Python 3", "tgt": "\"\"\"({:d} goals, ${:d})\"\"\".format(self.goals, self.penalties)"}
+{"src": "String Formatting in Python 3", "tgt": "\"\"\"({} goals, ${})\"\"\".format(self.goals, self.penalties)"}
+{"src": "String Formatting in Python 3", "tgt": "\"\"\"({0.goals} goals, ${0.penalties})\"\"\".format(self)"}
+{"src": "Convert list of lists to list of integers", "tgt": "[int(''.join(str(d) for d in x)) for x in L]"}
+{"src": "Convert list of lists to list of integers", "tgt": "[''.join(str(d) for d in x) for x in L]"}
+{"src": "Convert list of lists to list of integers", "tgt": "L = [int(''.join([str(y) for y in x])) for x in L]"}
+{"src": "How to write a list to a file with newlines in Python3", "tgt": "myfile.write('\\n'.join(lines))"}
+{"src": "Removing an element from a list based on a predicate", "tgt": "[x for x in ['AAT', 'XAC', 'ANT', 'TTA'] if 'X' not in x and 'N' not in x]"}
+{"src": "python regular expression to remove repeated words", "tgt": "text = re.sub('\\\\b(\\\\w+)( \\\\1\\\\b)+', '\\\\1', text)"}
+{"src": "Counting non zero values in each column of a dataframe in python", "tgt": "df.astype(bool).sum(axis=1)"}
+{"src": "Python match string if it does not start with X", "tgt": "re.search('(?<!Distillr)\\\\\\\\AcroTray\\\\.exe', 'C:\\\\SomeDir\\\\AcroTray.exe')"}
+{"src": "String to list in Python", "tgt": "\"\"\"QH QD JC KD JS\"\"\".split()"}
+{"src": "Parsing XML in Python with regex", "tgt": "print(re.search('>.*<', line).group(0))"}
+{"src": "How to empty a file using Python", "tgt": "open(filename, 'w').close()"}
+{"src": "how to convert a string date into datetime format in python?", "tgt": "datetime.datetime.strptime(string_date, '%Y-%m-%d %H:%M:%S.%f')"}
+{"src": "What's the fastest way to locate a list element within a list in python?", "tgt": "[index for index, item in enumerate(thelist) if item[0] == '332']"}
+{"src": "Python: trying to lower a string and remove non-alphanumeric characters aside from space", "tgt": "re.sub('[^\\\\sa-zA-Z0-9]', '', text).lower().strip()"}
+{"src": "Python: trying to lower a string and remove non-alphanumeric characters aside from space", "tgt": "re.sub('(?!\\\\s)[\\\\W_]', '', text).lower().strip()"}
+{"src": "Subscripting text in matplotlib labels", "tgt": "plt.plot(x, y, label='H\\u2082O')"}
+{"src": "Subscripting text in matplotlib labels", "tgt": "plt.plot(x, y, label='$H_2O$')"}
+{"src": "Looping over a list in Python", "tgt": "[x for x in mylist if len(x) == 3]"}
+{"src": "Initialize a list of objects in Python", "tgt": "lst = [Object() for _ in range(100)]"}
+{"src": "Initialize a list of objects in Python", "tgt": "lst = [Object() for i in range(100)]"}
+{"src": "selenium how to get the content of href within some targeted class", "tgt": "self.driver.find_element_by_css_selector('.someclass a').get_attribute('href')"}
+{"src": "Joining Table/DataFrames with common Column in Python", "tgt": "df1.merge(df2, on='Date_Time')"}
+{"src": "insert variable values into a string in python", "tgt": "'first string is: %s, second one is: %s' % (str1, 'geo.tif')"}
+{"src": "Split a string by a delimiter in python", "tgt": "[x.strip() for x in '2.MATCHES $$TEXT$$ STRING'.split('$$TEXT$$')]"}
+{"src": "check if a directory exists and create it if necessary", "tgt": "if (not os.path.exists(directory)):\n    os.makedirs(directory)"}
+{"src": "check if a directory exists and create it if necessary", "tgt": "try:\n    os.makedirs(path)\nexcept OSError:\n    if (not os.path.isdir(path)):\n        raise"}
+{"src": "check if a directory exists and create it if necessary", "tgt": "distutils.dir_util.mkpath(path)"}
+{"src": "check if a directory exists and create it if necessary", "tgt": "try:\n    os.makedirs(path)\nexcept OSError as exception:\n    if (exception.errno != errno.EEXIST):\n        raise"}
+{"src": "Replace a substring when it is a separate word", "tgt": "re.sub('\\\\bH3\\\\b', 'H1', text)"}
+{"src": "Python: removing characters except digits from string", "tgt": "re.sub('\\\\D', '', 'aas30dsa20')"}
+{"src": "Python: removing characters except digits from string", "tgt": "\"\"\"\"\"\".join([x for x in 'aas30dsa20' if x.isdigit()])"}
+{"src": "How to access a tag called \"name\" in BeautifulSoup", "tgt": "print(soup.find('name').string)"}
+{"src": "Iterate through PyMongo Cursor as key-value pair", "tgt": "records = dict((record['_id'], record) for record in cursor)"}
+{"src": "Python how to combine two matrices in numpy", "tgt": "np.concatenate((A, B))"}
+{"src": "Python how to combine two matrices in numpy", "tgt": "np.vstack((A, B))"}
+{"src": "how to check the character count of a file in python", "tgt": "os.stat(filepath).st_size"}
+{"src": "count the occurrences of a list item", "tgt": "l.count('a')"}
+{"src": "count the occurrences of a list item", "tgt": "Counter(l)"}
+{"src": "count the occurrences of a list item", "tgt": "[[x, l.count(x)] for x in set(l)]"}
+{"src": "count the occurrences of a list item", "tgt": "dict(((x, l.count(x)) for x in set(l)))"}
+{"src": "count the occurrences of a list item", "tgt": "l.count('b')"}
+{"src": "How to copy a file using python?", "tgt": "shutil.copy(srcfile, dstdir)"}
+{"src": "Efficient way to find the largest key in a dictionary with non-zero value", "tgt": "max(k for k, v in x.items() if v != 0)"}
+{"src": "Efficient way to find the largest key in a dictionary with non-zero value", "tgt": "(k for k, v in x.items() if v != 0)"}
+{"src": "Efficient way to find the largest key in a dictionary with non-zero value", "tgt": "max(k for k, v in x.items() if v != 0)"}
+{"src": "Re-read an open file Python", "tgt": "file.seek(0)"}
+{"src": "Coalesce values from 2 columns into a single column in a pandas dataframe", "tgt": "df['c'] = np.where(df['a'].isnull, df['b'], df['a'])"}
+{"src": "python: Is this a wrong way to remove an element from a dict?", "tgt": "del d['ele']"}
+{"src": "How can I subtract or add 100 years to a datetime field in the database in Django?", "tgt": "MyModel.objects.update(timestamp=F('timestamp') + timedelta(days=36524.25))"}
+{"src": "How to merge multiple lists into one list in python?", "tgt": "['it'] + ['was'] + ['annoying']"}
+{"src": "How to increment a value with leading zeroes?", "tgt": "str(int(x) + 1).zfill(len(x))"}
+{"src": "How can I check if a Pandas dataframe's index is sorted", "tgt": "all(df.index[:-1] <= df.index[1:])"}
+{"src": "Convert tuple to list", "tgt": "list(t)"}
+{"src": "Convert tuple to list", "tgt": "tuple(l)"}
+{"src": "Convert tuple to list and back", "tgt": "level1 = map(list, level1)"}
+{"src": "how to send the output of pprint module to a log file", "tgt": "pprint.pprint(dataobject, logFile)"}
+{"src": "Python Pandas: Get index of rows which column matches certain value", "tgt": "df.loc[df['BoolCol']]"}
+{"src": "Python Pandas: Get index of rows which column matches certain value", "tgt": "df.iloc[np.flatnonzero(df['BoolCol'])]"}
+{"src": "Python Pandas: Get index of rows which column matches certain value", "tgt": "df[df['BoolCol'] == True].index.tolist()"}
+{"src": "Python Pandas: Get index of rows which column matches certain value", "tgt": "df[df['BoolCol']].index.tolist()"}
+{"src": "How do I change directory back to my original working directory with Python?", "tgt": "os.chdir(owd)"}
+{"src": "How to insert strings with quotes and newlines into sqlite db with Python?", "tgt": "c.execute(\"INSERT INTO test VALUES (?, 'bar')\", (testfield,))"}
+{"src": "Python - how to convert a \"raw\" string into a normal string", "tgt": "\"\"\"\\\\x89\\\\n\"\"\".decode('string_escape')"}
+{"src": "Python - how to convert a \"raw\" string into a normal string", "tgt": "raw_string.decode('string_escape')"}
+{"src": "Python - how to convert a \"raw\" string into a normal string", "tgt": "raw_byte_string.decode('unicode_escape')"}
+{"src": "Splitting a string with repeated characters into a list using regex", "tgt": "[m.group(0) for m in re.finditer('(\\\\d)\\\\1*', s)]"}
+{"src": "How to do a scatter plot with empty circles in Python?", "tgt": "plt.scatter(np.random.randn(100), np.random.randn(100), facecolors='none')"}
+{"src": "How to do a scatter plot with empty circles in Python?", "tgt": "plt.plot(np.random.randn(100), np.random.randn(100), 'o', mfc='none')"}
+{"src": "Deleting a div with a particlular class using BeautifulSoup", "tgt": "soup.find('div', id='main-content').decompose()"}
+{"src": "How to filter rows containing a string pattern from a Pandas dataframe", "tgt": "df[df['ids'].str.contains('ball')]"}
+{"src": "How to convert pandas index in a dataframe to a column?", "tgt": "df.reset_index(level=0, inplace=True)"}
+{"src": "How to convert pandas index in a dataframe to a column?", "tgt": "df['index1'] = df.index"}
+{"src": "How to convert pandas index in a dataframe to a column?", "tgt": "df.reset_index(level=['tick', 'obs'])"}
+{"src": "Generic reverse of list items in Python", "tgt": "[x[::-1] for x in b]"}
+{"src": "in Numpy, how to zip two 2-D arrays?", "tgt": "np.array([zip(x, y) for x, y in zip(a, b)])"}
+{"src": "in Numpy, how to zip two 2-D arrays?", "tgt": "np.array(zip(a.ravel(), b.ravel()), dtype='i4,i4').reshape(a.shape)"}
+{"src": "How to convert a list of longs into a comma separated string in python", "tgt": "\"\"\",\"\"\".join([str(i) for i in list_of_ints])"}
+{"src": "Posting raw data with Python", "tgt": "requests.post(url, data=DATA, headers=HEADERS_DICT, auth=(username, password))"}
+{"src": "Find last occurrence of character", "tgt": "'abcd}def}'.rfind('}')"}
+{"src": "Ending with a for loop in python", "tgt": "print([item for item in [1, 2, 3]])"}
+{"src": "transpose dictionary (extract all the values for one key from a list of dictionaries)", "tgt": "[(x['x'], x['y']) for x in d]"}
+{"src": "How to get the filename without the extension from a path in Python?", "tgt": "print(os.path.splitext(os.path.basename('hemanth.txt'))[0])"}
+{"src": "Make dictionary from list with python", "tgt": "dict(x[i:i + 2] for i in range(0, len(x), 2))"}
+{"src": "Merging a list of lists", "tgt": "values = sum([['A', 'B', 'C'], ['D', 'E', 'F'], ['G', 'H', 'I']], [])"}
+{"src": "How to select rows in a DataFrame between two values, in Python Pandas?", "tgt": "df = df[(df['closing_price'] >= 99) & (df['closing_price'] <= 101)]"}
+{"src": "Replace all occurrences of a string in a pandas dataframe (Python)", "tgt": "df.replace({'\\n': '<br>'}, regex=True)"}
+{"src": "Replace all occurrences of a string in a pandas dataframe (Python)", "tgt": "df.replace({'\\n': '<br>'}, regex=True)"}
+{"src": "Mapping a string into a list of pairs", "tgt": "[(x + y) for x, y in zip(word, word[1:])]"}
+{"src": "Mapping a string into a list of pairs", "tgt": "list(map(lambda x, y: x + y, word[:-1], word[1:]))"}
+{"src": "How do you extract a url from a string using python?", "tgt": "print(re.findall('(https?://[^\\\\s]+)', myString))"}
+{"src": "How do you extract a url from a string using python?", "tgt": "print(re.search('(?P<url>https?://[^\\\\s]+)', myString).group('url'))"}
+{"src": "Remove all special characters, punctuation and spaces from string", "tgt": "re.sub('[^A-Za-z0-9]+', '', mystring)"}
+{"src": "How to get a daterange of the 2nd Fridays of each month?", "tgt": "pd.date_range('2016-01-01', freq='WOM-2FRI', periods=13)"}
+{"src": "Multidimensional array in Python", "tgt": "matrix = [[a, b], [c, d], [e, f]]"}
+{"src": "How do I replace whitespaces with underscore and vice versa?", "tgt": "mystring.replace(' ', '_')"}
+{"src": "How to get an absolute file path in Python", "tgt": "os.path.abspath('mydir/myfile.txt')"}
+{"src": "Is there a string-collapse library function in python?", "tgt": "\"\"\" \"\"\".join(my_string.split())"}
+{"src": "Get Filename Without Extension in Python", "tgt": "os.path.splitext(filename)[0]"}
+{"src": "How to sum elements in functional way", "tgt": "[sum(l[:i]) for i, _ in enumerate(l)]"}
+{"src": "Python Regex Split Keeps Split Pattern Characters", "tgt": "\"\"\"Docs/src/Scripts/temp\"\"\".replace('/', '/\\x00/').split('\\x00')"}
+{"src": "Shuffle columns of an array with Numpy", "tgt": "np.random.shuffle(np.transpose(r))"}
+{"src": "Copy all values in a column to a new column in a pandas dataframe", "tgt": "df['D'] = df['B']"}
+{"src": "Find a value within nested json dictionary in python", "tgt": "list(data['A']['B'].values())[0]['maindata'][0]['Info']"}
+{"src": "True for all characters of a string", "tgt": "all(predicate(x) for x in string)"}
+{"src": "How to determine number of files on a drive with Python?", "tgt": "os.statvfs('/').f_files - os.statvfs('/').f_ffree"}
+{"src": "how to get a single result from a SQLite query in python?", "tgt": "cursor.fetchone()[0]"}
+{"src": "How to convert a string list into an integer in python", "tgt": "user_list = [int(number) for number in user_input.split(',')]"}
+{"src": "How to convert a string list into an integer in python", "tgt": "[int(s) for s in user.split(',')]"}
+{"src": "Sorting a Python list by two criteria", "tgt": "sorted(list, key=lambda x: (x[0], -x[1]))"}
+{"src": "How to sort a list of objects , based on an attribute of the objects?", "tgt": "ut.sort(key=cmpfun, reverse=True)"}
+{"src": "How to sort a list of objects , based on an attribute of the objects?", "tgt": "ut.sort(key=lambda x: x.count, reverse=True)"}
+{"src": "How to sort a list of objects , based on an attribute of the objects?", "tgt": "ut.sort(key=lambda x: x.count, reverse=True)"}
+{"src": "Click a href button with selenium and python?", "tgt": "driver.find_element_by_partial_link_text('Send').click()"}
+{"src": "Click a href button with selenium and python?", "tgt": "driver.findElement(By.linkText('Send InMail')).click()"}
+{"src": "Click a href button with selenium and python?", "tgt": "driver.find_element_by_link_text('Send InMail').click()"}
+{"src": "Casting an int to a string in Python", "tgt": "'ME' + str(i)"}
+{"src": "Sorting data in DataFrame Pandas", "tgt": "df.sort_values(['System_num', 'Dis'])"}
+{"src": "Prepend a line to an existing file in Python", "tgt": "open('outfile', 'w').write('#test firstline\\n' + open('infile').read())"}
+{"src": "Python sort a List by length of value in tuple", "tgt": "l.sort(key=lambda t: len(t[1]), reverse=True)"}
+{"src": "Split by suffix with Python regular expression", "tgt": "re.findall('\\\\b(\\\\w+)d\\\\b', s)"}
+{"src": "python's re: return True if regex contains in the string", "tgt": "bool(re.search('ba[rzd]', 'foobarrrr'))"}
+{"src": "Removing duplicates in lists", "tgt": "list(set(t))"}
+{"src": "Removing duplicates in lists", "tgt": "list(set(source_list))"}
+{"src": "Removing duplicates in lists", "tgt": "list(OrderedDict.fromkeys('abracadabra'))"}
+{"src": "How to make List from Numpy Matrix in Python", "tgt": "numpy.array(a).reshape(-1).tolist()"}
+{"src": "How to make List from Numpy Matrix in Python", "tgt": "numpy.array(a)[0].tolist()"}
+{"src": "Beautifulsoup - nextSibling", "tgt": "print(soup.find(text='Address:').findNext('td').contents[0])"}
+{"src": "Converting lists of tuples to strings Python", "tgt": "\"\"\" \"\"\".join([('%d@%d' % t) for t in l])"}
+{"src": "Converting lists of tuples to strings Python", "tgt": "\"\"\" \"\"\".join([('%d@%d' % (t[0], t[1])) for t in l])"}
+{"src": "Splinter or Selenium: Can we get current html page after clicking a button?", "tgt": "driver.execute_script('return document.documentElement.outerHTML;')"}
+{"src": "Find a specific pattern (regular expression) in a list of strings (Python)", "tgt": "[i for i in teststr if re.search('\\\\d+[xX]', i)]"}
+{"src": "Selecting with complex criteria from pandas.DataFrame", "tgt": "df['A'][(df['B'] > 50) & (df['C'] == 900)]"}
+{"src": "How to sort dictionaries by keys in Python", "tgt": "sorted(o.items())"}
+{"src": "How to sort dictionaries by keys in Python", "tgt": "sorted(d)"}
+{"src": "How to sort dictionaries by keys in Python", "tgt": "sorted(d.items())"}
+{"src": "convert strings into integers", "tgt": "int('1')"}
+{"src": "convert strings into integers", "tgt": "int()"}
+{"src": "convert strings into integers", "tgt": "T2 = [map(int, x) for x in T1]"}
+{"src": "How to call a shell script from python code?", "tgt": "subprocess.call(['./test.sh'])"}
+{"src": "How to call a shell script from python code?", "tgt": "subprocess.call(['notepad'])"}
+{"src": "Interleaving two lists in Python", "tgt": "[val for pair in zip(l1, l2) for val in pair]"}
+{"src": "Base64 encoding in Python 3", "tgt": "encoded = base64.b64encode('data to be encoded')"}
+{"src": "Base64 encoding in Python 3", "tgt": "encoded = 'data to be encoded'.encode('ascii')"}
+{"src": "Parsing CSV / tab-delimited txt file with Python", "tgt": "lol = list(csv.reader(open('text.txt', 'rb'), delimiter='\\t'))"}
+{"src": "Python - Access object attributes as in a dictionary", "tgt": "getattr(my_object, my_str)"}
+{"src": "list of dicts to/from dict of lists", "tgt": "print(dict(zip(LD[0], zip(*[list(d.values()) for d in LD]))))"}
+{"src": "How do I sum the first value in each tuple in a list of tuples in Python?", "tgt": "sum([pair[0] for pair in list_of_pairs])"}
+{"src": "Convert unicode string dictionary into dictionary in python", "tgt": "d = ast.literal_eval(\"{'code1':1,'code2':1}\")"}
+{"src": "Find all words in a string that start with the $ sign in Python", "tgt": "[word for word in mystring.split() if word.startswith('$')]"}
+{"src": "How to remove any URL within a string in Python", "tgt": "text = re.sub('^https?:\\\\/\\\\/.*[\\\\r\\\\n]*', '', text, flags=re.MULTILINE)"}
+{"src": "How to find all elements in a numpy 2-dimensional array that match a certain list?", "tgt": "np.where(np.in1d(A, [1, 3, 4]).reshape(A.shape), A, 0)"}
+{"src": "Calculate mean across dimension in a 2D array", "tgt": "np.mean(a, axis=1)"}
+{"src": "Running R script from python", "tgt": "subprocess.call(['/usr/bin/Rscript', '--vanilla', '/pathto/MyrScript.r'])"}
+{"src": "Running R script from python", "tgt": "subprocess.call('/usr/bin/Rscript --vanilla /pathto/MyrScript.r', shell=True)"}
+{"src": "How to add a header to a csv file in Python?", "tgt": "writer.writeheader()"}
+{"src": "Pandas Dataframe: Replacing NaN with row average", "tgt": "df.fillna(df.mean(axis=1), axis=1)"}
+{"src": "Python: Converting Epoch time into the datetime", "tgt": "time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(1347517370))"}
+{"src": "Calling a base class's classmethod in Python", "tgt": "super(Derived, cls).do(a)"}
+{"src": "selecting rows in numpy ndarray based on the value of two columns", "tgt": "a[np.where((a[:, (0)] == 0) * (a[:, (1)] == 1))]"}
+{"src": "Python regex separate space-delimited words into a list", "tgt": "re.split(' +', 'hello world sample text')"}
+{"src": "Length of longest word in a list", "tgt": "len(max(words, key=len))"}
+{"src": "accessing python dictionary", "tgt": "result[0]['from_user']"}
+{"src": "Save line in file to list", "tgt": "[line.split() for line in open('File.txt')]"}
+{"src": "Python: Best Way to Exchange Keys with Values in a Dictionary?", "tgt": "res = dict((v, k) for k, v in a.items())"}
+{"src": "creating a tmp file in python", "tgt": "new_file = open('path/to/FILE_NAME.ext', 'w')"}
+{"src": "How to count distinct values in a column of a pandas group by object?", "tgt": "df.groupby(['col1', 'col2'])['col3'].nunique().reset_index()"}
+{"src": "Check for a key pattern in a dictionary in python", "tgt": "any(key.startswith('EMP$$') for key in dict1)"}
+{"src": "Check for a key pattern in a dictionary in python", "tgt": "[value for key, value in list(dict1.items()) if key.startswith('EMP$$')]"}
+{"src": "python, best way to convert a pandas series into a pandas dataframe", "tgt": "pd.DataFrame({'email': sf.index, 'list': sf.values})"}
+{"src": "printing tab-separated values of a list", "tgt": "print('\\t'.join(map(str, list)))"}
+{"src": "Python unicode string with UTF-8?", "tgt": "print('\\xd0\\xbf\\xd1\\x80\\xd0\\xb8'.encode('raw_unicode_escape'))"}
+{"src": "Python unicode string with UTF-8?", "tgt": "'Sopet\\xc3\\xb3n'.encode('latin-1').decode('utf-8')"}
+{"src": "How to adjust the quality of a resized image in Python Imaging Library?", "tgt": "image = image.resize((x, y), Image.ANTIALIAS)"}
+{"src": "Regex, find pattern only in middle of string", "tgt": "re.findall('n(?<=[^n]n)n+(?=[^n])(?i)', s)"}
+{"src": "how to show Percentage in python", "tgt": "print('{0:.0f}%'.format(1.0 / 3 * 100))"}
+{"src": "Sort a list of dicts by dict values", "tgt": "mylist.sort(key=lambda x: x['title'])"}
+{"src": "Sort a list of dicts by dict values", "tgt": "l.sort(key=lambda x: x['title'])"}
+{"src": "Sort a list of dicts by dict values", "tgt": "l.sort(key=lambda x: (x['title'], x['title_url'], x['id']))"}
+{"src": "finding n largest differences between two lists", "tgt": "heapq.nlargest(10, range(len(l1)), key=lambda i: abs(l1[i] - l2[i]))"}
+{"src": "Finding multiple attributes within the span tag in Python", "tgt": "soup.find_all('span', {'class': 'starGryB sp'})"}
+{"src": "Pandas writing dataframe to other postgresql schema", "tgt": "df.to_sql('test', engine, schema='a_schema')"}
+{"src": "Regular Expression to find brackets in a string", "tgt": "brackets = re.sub('[^(){}[\\\\]]', '', s)"}
+{"src": "Removing duplicates from list of lists in Python", "tgt": "list(dict((x[0], x) for x in L).values())"}
+{"src": "Reading a file without newlines", "tgt": "[line.rstrip('\\n') for line in file]"}
+{"src": "get item's position in a list", "tgt": "[i for (i, x) in enumerate(testlist) if (x == 1)]"}
+{"src": "get item's position in a list", "tgt": "[i for (i, x) in enumerate(testlist) if (x == 1)]"}
+{"src": "get item's position in a list", "tgt": "for i in [i for (i, x) in enumerate(testlist) if (x == 1)]:\n    pass"}
+{"src": "get item's position in a list", "tgt": "for i in (i for (i, x) in enumerate(testlist) if (x == 1)):\n    pass"}
+{"src": "get item's position in a list", "tgt": "gen = (i for (i, x) in enumerate(testlist) if (x == 1))\nfor i in gen:\n    pass"}
+{"src": "get item's position in a list", "tgt": "print(testlist.index(element))"}
+{"src": "get item's position in a list", "tgt": "try:\n    print(testlist.index(element))\nexcept ValueError:\n    pass"}
+{"src": "Find the maximum value in a list of tuples in Python", "tgt": "max(lis, key=lambda item: item[1])[0]"}
+{"src": "Find the maximum value in a list of tuples in Python", "tgt": "max(lis, key=itemgetter(1))[0]"}
+{"src": "How do I simulate a progress counter in a command line application in Python?", "tgt": "time.sleep(1)"}
+{"src": "Tuple conversion to a string", "tgt": "\"\"\", \"\"\".join('(' + ', '.join(i) + ')' for i in L)"}
+{"src": "Default value for field in Django model", "tgt": "b = models.CharField(max_length=7, default='0000000', editable=False)"}
+{"src": "How do I perform secondary sorting in python?", "tgt": "sorted(list5, lambda x: (degree(x), x))"}
+{"src": "How do I perform secondary sorting in python?", "tgt": "sorted(list5, key=lambda vertex: (degree(vertex), vertex))"}
+{"src": "Python: convert list to generator", "tgt": "(n for n in [1, 2, 3, 5])"}
+{"src": "Remove multiple items from list in Python", "tgt": "newlist = [v for i, v in enumerate(oldlist) if i not in removelist]"}
+{"src": "Deleting a specific line in a file (python)", "tgt": "f = open('yourfile.txt', 'w')"}
+{"src": "Attribute getters in python", "tgt": "getattr(obj, 'attr')"}
+{"src": "How do I convert tuple of tuples to list in one line (pythonic)?", "tgt": "from functools import reduce\nreduce(lambda a, b: a + b, (('aa',), ('bb',), ('cc',)))"}
+{"src": "How do I convert tuple of tuples to list in one line (pythonic)?", "tgt": "map(lambda a: a[0], (('aa',), ('bb',), ('cc',)))"}
+{"src": "Python Pandas: How to replace a characters in a column of a dataframe?", "tgt": "df['range'].replace(',', '-', inplace=True)"}
+{"src": "inverse of zip", "tgt": "zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4)])"}
+{"src": "inverse of zip", "tgt": "zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4)])"}
+{"src": "inverse of zip", "tgt": "result = ([a for (a, b) in original], [b for (a, b) in original])"}
+{"src": "inverse of zip", "tgt": "result = ((a for (a, b) in original), (b for (a, b) in original))"}
+{"src": "inverse of zip", "tgt": "zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])"}
+{"src": "inverse of zip", "tgt": "map(None, *[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e',)])"}
+{"src": "Python JSON serialize a Decimal object", "tgt": "json.dumps(Decimal('3.9'))"}
+{"src": "Add key to a dictionary", "tgt": "d['mynewkey'] = 'mynewvalue'"}
+{"src": "Add key to a dictionary", "tgt": "data.update({'a': 1, })"}
+{"src": "Add key to a dictionary", "tgt": "data.update(dict(a=1))"}
+{"src": "Add key to a dictionary", "tgt": "data.update(a=1)"}
+{"src": "Is there a one line code to find maximal value in a matrix?", "tgt": "max([max(i) for i in matrix])"}
+{"src": "Python - how to round down to 2 decimals", "tgt": "answer = str(round(answer, 2))"}
+{"src": "Extract IP address from an html string (python)", "tgt": "ip = re.findall('[0-9]+(?:\\\\.[0-9]+){3}', s)"}
+{"src": "How do I filter a pandas DataFrame based on value counts?", "tgt": "df.groupby('A').filter(lambda x: len(x) > 1)"}
+{"src": "Converting a string into a list in Python", "tgt": "[x for x in myfile.splitlines() if x != '']"}
+{"src": "Converting a string into a list in Python", "tgt": "lst = map(int, open('filename.txt').readlines())"}
+{"src": "Adding Colorbar to a Spectrogram", "tgt": "plt.colorbar(mappable=mappable, cax=ax3)"}
+{"src": "Count most frequent 100 words from sentences in Dataframe Pandas", "tgt": "Counter(' '.join(df['text']).split()).most_common(100)"}
+{"src": "Python split a string using regex", "tgt": "re.findall('(.+?):(.+?)\\\\b ?', text)"}
+{"src": "Generate all subsets of size k (containing k elements) in Python", "tgt": "list(itertools.combinations((1, 2, 3), 2))"}
+{"src": "Python: How to get a value of datetime.today() that is \"timezone aware\"?", "tgt": "datetime.now(pytz.utc)"}
+{"src": "Python: How to remove empty lists from a list?", "tgt": "list2 = [x for x in list1 if x != []]"}
+{"src": "Python: How to remove empty lists from a list?", "tgt": "list2 = [x for x in list1 if x]"}
+{"src": "Django view returning json without using template", "tgt": "return HttpResponse(data, mimetype='application/json')"}
+{"src": "regex to get all text outside of brackets", "tgt": "re.findall('(.*?)\\\\[.*?\\\\]', example_str)"}
+{"src": "regex to get all text outside of brackets", "tgt": "re.findall('(.*?)(?:\\\\[.*?\\\\]|$)', example_str)"}
+{"src": "Matching multiple regex patterns with the alternation operator?", "tgt": "re.findall('\\\\(.+?\\\\)|\\\\w', '(zyx)bc')"}
+{"src": "Matching multiple regex patterns with the alternation operator?", "tgt": "re.findall('\\\\((.*?)\\\\)|(\\\\w)', '(zyx)bc')"}
+{"src": "Matching multiple regex patterns with the alternation operator?", "tgt": "re.findall('\\\\(.*?\\\\)|\\\\w', '(zyx)bc')"}
+{"src": "Perform a string operation for every element in a Python list", "tgt": "elements = ['%{0}%'.format(element) for element in elements]"}
+{"src": "start python script as background process from within a python script", "tgt": "subprocess.Popen(['background-process', 'arguments'])"}
+{"src": "Python dictionary: Get list of values for list of keys", "tgt": "[mydict[x] for x in mykeys]"}
+{"src": "Create dictionary from lists of keys and multiple values", "tgt": "dict([('Name', 'Joe'), ('Age', 22)])"}
+{"src": "Numpy - Averaging multiple columns of a 2D array", "tgt": "data.reshape(-1, j).mean(axis=1).reshape(data.shape[0], -1)"}
+{"src": "Replace all quotes in a string with escaped quotes?", "tgt": "print(s.encode('unicode-escape').replace('\"', '\\\\\"'))"}
+{"src": "Partitioning a string in Python by a regular expression", "tgt": "re.split('(\\\\W+)', s)"}
+{"src": "plotting stacked barplots on a panda data frame", "tgt": "df.plot(kind='barh', stacked=True)"}
+{"src": "How to reverse a dictionary in Python?", "tgt": "{i[1]: i[0] for i in list(myDictionary.items())}"}
+{"src": "finding index of multiple items in a list", "tgt": "[i for i, j in enumerate(myList) if 'how' in j.lower() or 'what' in j.lower()]"}
+{"src": "find out if a Python object is a string", "tgt": "isinstance(obj, str)"}
+{"src": "find out if a Python object is a string", "tgt": "isinstance(o, str)"}
+{"src": "find out if a Python object is a string", "tgt": "(type(o) is str)"}
+{"src": "find out if a Python object is a string", "tgt": "isinstance(o, str)"}
+{"src": "find out if a Python object is a string", "tgt": "isinstance(obj_to_test, str)"}
+{"src": "take the content of a list and append it to another list", "tgt": "list2.extend(list1)"}
+{"src": "take the content of a list and append it to another list", "tgt": "list1.extend(mylog)"}
+{"src": "take the content of a list and append it to another list", "tgt": "c.extend(a)"}
+{"src": "take the content of a list and append it to another list", "tgt": "for line in mylog:\n    list1.append(line)"}
+{"src": "Appending tuples to lists", "tgt": "b.append((a[0][0], a[0][2]))"}
+{"src": "Where do I get a SECRET_KEY for Flask?", "tgt": "app.config['SECRET_KEY'] = 'Your_secret_string'"}
+{"src": "How to unpack a Series of tuples in Pandas?", "tgt": "pd.DataFrame(out.tolist(), columns=['out-1', 'out-2'], index=out.index)"}
+{"src": "How to find the position of an element in a list , in Python?", "tgt": "[x for x in range(len(stocks_list)) if stocks_list[x] == 'MSFT']"}
+{"src": "Is it possible to wrap the text of xticks in matplotlib in python?", "tgt": "ax.set_xticklabels(labels, rotation=45)"}
+{"src": "How to remove symbols from a string with Python?", "tgt": "re.sub('[^\\\\w]', ' ', s)"}
+{"src": "get current directory - Python", "tgt": "os.path.basename(os.path.dirname(os.path.realpath(__file__)))"}
+{"src": "Regex and Octal Characters", "tgt": "print(re.findall(\"'\\\\\\\\[0-7]{1,3}'\", str))"}
+{"src": "Python split string based on regex", "tgt": "re.split('[ ](?=[A-Z]+\\\\b)', input)"}
+{"src": "Python split string based on regex", "tgt": "re.split('[ ](?=[A-Z])', input)"}
+{"src": "Using Python Requests to send file and JSON in single request", "tgt": "r = requests.post(url, files=files, headers=headers, data=data)"}
+{"src": "How to write bytes to a file in Python 3 without knowing the encoding?", "tgt": "open('filename', 'wb').write(bytes_)"}
+{"src": "Mapping dictionary value to list", "tgt": "[dct[k] for k in lst]"}
+{"src": "How to find duplicate names using pandas?", "tgt": "x.set_index('name').index.get_duplicates()"}
+{"src": "Truncating floats in Python", "tgt": "round(1.923328437452, 3)"}
+{"src": "Order list by date (String and datetime)", "tgt": "sorted(li, key=lambda x: datetime.strptime(x[1], '%d/%m/%Y'), reverse=True)"}
+{"src": "Move radial tick labels on a polar plot in matplotlib", "tgt": "ax.set_rlabel_position(135)"}
+{"src": "How to check if a path is absolute path or relative path in cross platform way with Python?", "tgt": "os.path.isabs(my_path)"}
+{"src": "Counting the Number of keywords in a dictionary in python", "tgt": "len(list(yourdict.keys()))"}
+{"src": "Counting the Number of keywords in a dictionary in python", "tgt": "len(set(open(yourdictfile).read().split()))"}
+{"src": "Pandas dataframe get first row of each group", "tgt": "df.groupby('id').first()"}
+{"src": "Splitting a list in a Pandas cell into multiple columns", "tgt": "pd.concat([df[0].apply(pd.Series), df[1]], axis=1)"}
+{"src": "Extracting specific src attributes from script tags", "tgt": "re.findall('src=\"js/([^\"]*\\\\bjquery\\\\b[^\"]*)\"', data)"}
+{"src": "Most efficient way to convert items of a list to int and sum them up", "tgt": "sum(int(float(item)) for item in [_f for _f in ['', '3.4', '', '', '1.0'] if _f])"}
+{"src": "How to use subprocess when multiple arguments contain spaces?", "tgt": "subprocess.Popen(['c:\\\\Program Files\\\\VMware\\\\VMware Server\\\\vmware-cmd.bat'])"}
+{"src": "how to reverse a priority queue in Python without using classes?", "tgt": "q.put((-n, n))"}
+{"src": "pandas plot dataframe barplot with colors by category", "tgt": "df['group'].plot(kind='bar', color=['r', 'g', 'b', 'r', 'g', 'b', 'r'])"}
+{"src": "Python regex for MD5 hash", "tgt": "re.findall('([a-fA-F\\\\d]{32})', data)"}
+{"src": "Getting the length of an array", "tgt": "len(my_list)"}
+{"src": "Getting the length of an array", "tgt": "len(l)"}
+{"src": "Getting the length of an array", "tgt": "len(s)"}
+{"src": "Getting the length of an array", "tgt": "len(my_tuple)"}
+{"src": "Getting the length of an array", "tgt": "len(my_string)"}
+{"src": "remove escape character from string", "tgt": "\"\"\"\\\\a\"\"\".decode('string_escape')"}
+{"src": "Python string replace two things at once?", "tgt": "\"\"\"obama\"\"\".replace('a', '%temp%').replace('b', 'a').replace('%temp%', 'b')"}
+{"src": "How do I remove/delete a folder that is not empty with Python?", "tgt": "shutil.rmtree('/folder_name')"}
+{"src": "in pandas how can I groupby weekday() for a datetime column?", "tgt": "data['weekday'] = data['my_dt'].apply(lambda x: x.weekday())"}
+{"src": "How to sort Counter by value? - python", "tgt": "sorted(x, key=x.get, reverse=True)"}
+{"src": "How to sort Counter by value? - python", "tgt": "sorted(list(x.items()), key=lambda pair: pair[1], reverse=True)"}
+{"src": "Append a NumPy array to a NumPy array", "tgt": "np.vstack((a, b))"}
+{"src": "numpy concatenate two arrays vertically", "tgt": "print(concatenate((a, b), axis=0))"}
+{"src": "numpy concatenate two arrays vertically", "tgt": "print(concatenate((a, b), axis=1))"}
+{"src": "numpy concatenate two arrays vertically", "tgt": "c = np.r_[(a[None, :], b[None, :])]"}
+{"src": "numpy concatenate two arrays vertically", "tgt": "np.array((a, b))"}
+{"src": "How can I do DNS lookups in Python, including referring to /etc/hosts?", "tgt": "print(socket.getaddrinfo('google.com', 80))"}
+{"src": "How to update a subset of a MultiIndexed pandas DataFrame", "tgt": "df.xs('sat', level='day', drop_level=False)"}
+{"src": "How do I return a 401 Unauthorized in Django?", "tgt": "return HttpResponse('Unauthorized', status=401)"}
+{"src": "How to dynamically select template directory to be used in flask?", "tgt": "Flask(__name__, template_folder='wherever')"}
+{"src": "How do I INSERT INTO t1 (SELECT * FROM t2) in SQLAlchemy?", "tgt": "session.execute('INSERT INTO t1 (SELECT * FROM t2)')"}
+{"src": "Sorting a list of lists in Python", "tgt": "c2.sort(key=lambda row: row[2])"}
+{"src": "Sorting a list of lists in Python", "tgt": "c2.sort(key=lambda row: (row[2], row[1], row[0]))"}
+{"src": "Sorting a list of lists in Python", "tgt": "c2.sort(key=lambda row: (row[2], row[1]))"}
+{"src": "Non-ASCII characters in Matplotlib", "tgt": "matplotlib.rc('font', **{'sans-serif': 'Arial', 'family': 'sans-serif'})"}
+{"src": "Pandas datetime column to ordinal", "tgt": "df['date'].apply(lambda x: x.toordinal())"}
+{"src": "Get HTML Source of WebElement in Selenium WebDriver using Python", "tgt": "element.get_attribute('innerHTML')"}
+{"src": "Most efficient way to get the integer index of a key in pandas", "tgt": "df.index.get_loc('bob')"}
+{"src": "open a terminal from python", "tgt": "os.system('gnome-terminal -e \\'bash -c \"sudo apt-get update; exec bash\"\\'')"}
+{"src": "Python - How to declare and add items to an array?", "tgt": "my_dict.update({'third_key': 1})"}
+{"src": "Python - How to declare and add items to an array?", "tgt": "my_list = []"}
+{"src": "Python - How to declare and add items to an array?", "tgt": "my_list.append(12)"}
+{"src": "Add entry to list and remove first one in Python", "tgt": "myList.insert(0, 'wuggah')"}
+{"src": "Converting a hex-string representation to actual bytes in Python", "tgt": "\"\"\"\\\\xF3\\\\xBE\\\\x80\\\\x80\"\"\".replace('\\\\x', '').decode('hex')"}
+{"src": "How to select the last column of dataframe", "tgt": "df[df.columns[-1]]"}
+{"src": "How to get a value from a Pandas DataFrame and not the index and object type", "tgt": "df.loc[df['Letters'] == 'C', 'Letters'].values[0]"}
+{"src": "Converting two lists into a matrix", "tgt": "np.column_stack(([1, 2, 3], [4, 5, 6]))"}
+{"src": "determine the variable type", "tgt": "type(i)"}
+{"src": "determine the variable type", "tgt": "type(v)"}
+{"src": "determine the variable type", "tgt": "type(v)"}
+{"src": "determine the variable type", "tgt": "type(v)"}
+{"src": "determine the variable type", "tgt": "type(v)"}
+{"src": "determine the variable type", "tgt": "print(type(variable_name))"}
+{"src": "Get the nth item of a generator in Python", "tgt": "next(itertools.islice(range(10), 5, 5 + 1))"}
+{"src": "printing double quotes around a variable", "tgt": "print('\"{}\"'.format(word))"}
+{"src": "Python concat string with list", "tgt": "\"\"\" \"\"\".join(list)"}
+{"src": "Extending a list of lists in Python?", "tgt": "y = [[] for n in range(2)]"}
+{"src": "How do you read a file into a list in Python?", "tgt": "data = [line.strip() for line in open('C:/name/MyDocuments/numbers', 'r')]"}
+{"src": "How to delete all instances of a character in a string in python?", "tgt": "\"\"\"\"\"\".join([char for char in 'it is icy' if char != 'i'])"}
+{"src": "How to delete all instances of a character in a string in python?", "tgt": "re.sub('i', '', 'it is icy')"}
+{"src": "How to delete all instances of a character in a string in python?", "tgt": "\"\"\"it is icy\"\"\".replace('i', '')"}
+{"src": "How to delete all instances of a character in a string in python?", "tgt": "\"\"\"\"\"\".join([char for char in 'it is icy' if char != 'i'])"}
+{"src": "How to drop rows of Pandas DataFrame whose value in certain columns is NaN", "tgt": "df.dropna(subset=[1])"}
+{"src": "Searching a list of objects in Python", "tgt": "[x for x in myList if x.n == 30]"}
+{"src": "converting list of string to list of integer", "tgt": "nums = [int(x) for x in intstringlist]"}
+{"src": "converting list of string to list of integer", "tgt": "map(int, eval(input('Enter the unfriendly numbers: ')))"}
+{"src": "print in Python without newline or space", "tgt": "sys.stdout.write('.')"}
+{"src": "Python float to int conversion", "tgt": "int(round(2.51 * 100))"}
+{"src": "Find all files in directory with extension .txt", "tgt": "os.chdir('/mydir')\nfor file in glob.glob('*.txt'):\n    pass"}
+{"src": "Find all files in directory with extension .txt", "tgt": "for file in os.listdir('/mydir'):\n    if file.endswith('.txt'):\n        pass"}
+{"src": "Find all files in directory with extension .txt", "tgt": "for (root, dirs, files) in os.walk('/mydir'):\n    for file in files:\n        if file.endswith('.txt'):\n            pass"}
+{"src": "Pandas (python) plot() without a legend", "tgt": "df.plot(legend=False)"}
+{"src": "loop through an IP address range", "tgt": "for i in range(256):\n    for j in range(256):\n        ip = ('192.168.%d.%d' % (i, j))\n        print(ip)"}
+{"src": "loop through an IP address range", "tgt": "for (i, j) in product(list(range(256)), list(range(256))):\n    pass"}
+{"src": "loop through an IP address range", "tgt": "generator = iter_iprange('192.168.1.1', '192.168.255.255', step=1)"}
+{"src": "Python/Numpy: Convert list of bools to unsigned int", "tgt": "sum(1 << i for i, b in enumerate(x) if b)"}
+{"src": "Python: How to write multiple strings in one line?", "tgt": "target.write('%r\\n%r\\n%r\\n' % (line1, line2, line3))"}
+{"src": "How to flatten a hetrogenous list of list into a single list in python?", "tgt": "[y for x in data for y in (x if isinstance(x, list) else [x])]"}
+{"src": "In Python, is it possible to escape newline characters when printing a string?", "tgt": "print('foo\\nbar'.encode('string_escape'))"}
+{"src": "String Slicing Python", "tgt": "\"\"\"\"\"\".join(s.rsplit(',', 1))"}
+{"src": "Middle point of each pair of an numpy.array", "tgt": "(x[1:] + x[:-1]) / 2"}
+{"src": "Middle point of each pair of an numpy.array", "tgt": "x[:-1] + (x[1:] - x[:-1]) / 2"}
+{"src": "Reading unicode elements into numpy array", "tgt": "arr = numpy.fromiter(codecs.open('new.txt', encoding='utf-8'), dtype='<U2')"}
+{"src": "How to sort this list in Python?", "tgt": "l = sorted(l, key=itemgetter('time'), reverse=True)"}
+{"src": "How to sort this list in Python?", "tgt": "l = sorted(l, key=lambda a: a['time'], reverse=True)"}
+{"src": "pandas DataFrame filter regex", "tgt": "df.loc[df[0].str.contains('(Hel|Just)')]"}
+{"src": "How do I find the string between two special characters?", "tgt": "re.search('\\\\[(.*)\\\\]', your_string).group(1)"}
+{"src": "How to create a list of date string in 'yyyymmdd' format with Python Pandas?", "tgt": "[d.strftime('%Y%m%d') for d in pandas.date_range('20130226', '20130302')]"}
+{"src": "How to count the number of times something occurs inside a certain string?", "tgt": "\"\"\"The big brown fox is brown\"\"\".count('brown')"}
+{"src": "Sending post data from angularjs to django as JSON and not as raw content", "tgt": "json.loads(request.body)"}
+{"src": "Download file from web in Python 3", "tgt": "urllib.request.urlretrieve(url, file_name)"}
+{"src": "Split string into a list", "tgt": "text.split()"}
+{"src": "Split string into a list", "tgt": "text.split(',')"}
+{"src": "Split string into a list", "tgt": "line.split()"}
+{"src": "Replacing characters in a regex", "tgt": "[re.sub('(?<!\\\\d)\\\\.(?!\\\\d)', ' ', i) for i in s]"}
+{"src": "Sort A list of Strings Based on certain field", "tgt": "sorted(list_of_strings, key=lambda s: s.split(',')[1])"}
+{"src": "how to call multiple bash functions using | in python", "tgt": "subprocess.check_call('vasp | tee tee_output', shell=True)"}
+{"src": "How to eliminate all strings from a list", "tgt": "[element for element in lst if isinstance(element, int)]"}
+{"src": "How to eliminate all strings from a list", "tgt": "[element for element in lst if not isinstance(element, str)]"}
+{"src": "How do I sort a list of dictionaries by values of the dictionary in Python?", "tgt": "newlist = sorted(list_to_be_sorted, key=lambda k: k['name'])"}
+{"src": "How do I sort a list of dictionaries by values of the dictionary in Python?", "tgt": "newlist = sorted(l, key=itemgetter('name'), reverse=True)"}
+{"src": "How do I sort a list of dictionaries by values of the dictionary in Python?", "tgt": "list_of_dicts.sort(key=operator.itemgetter('name'))"}
+{"src": "How do I sort a list of dictionaries by values of the dictionary in Python?", "tgt": "list_of_dicts.sort(key=operator.itemgetter('age'))"}
+{"src": "How to sort a Dataframe by the ocurrences in a column in Python (pandas)", "tgt": "df.groupby('prots').sum().sort('scores', ascending=False)"}
+{"src": "How can I access elements inside a list within a dictionary python?", "tgt": "\"\"\",\"\"\".join(trans['category'])"}
+{"src": "Variants of string concatenation?", "tgt": "\"\"\"\"\"\".join(['A', 'B', 'C', 'D'])"}
+{"src": "How do I get JSON data from RESTful service using Python?", "tgt": "json.load(urllib.request.urlopen('url'))"}
+{"src": "Removing an item from list matching a substring - Python", "tgt": "[x for x in sents if not x.startswith('@$\\t') and not x.startswith('#')]"}
+{"src": "Django filter by hour", "tgt": "Entry.objects.filter(pub_date__contains='08:00')"}
+{"src": "sort a list of dicts by x then by y", "tgt": "list.sort(key=lambda item: (item['points'], item['time']))"}
+{"src": "How to convert a Python datetime object to seconds", "tgt": "(t - datetime.datetime(1970, 1, 1)).total_seconds()"}
+{"src": "How to replace only part of the match with python re.sub", "tgt": "re.sub('(\\\\_a)?\\\\.([^\\\\.]*)$', '_suff.\\\\2', 'long.file.name.jpg')"}
+{"src": "How can I reload objects in my namespace in ipython", "tgt": "import imp\nimp.reload(module)"}
+{"src": "How to get a 16bit Unsigned integer in python", "tgt": "struct.unpack('H', struct.pack('h', number))"}
+{"src": "How can I use sum() function for a list in Python?", "tgt": "numlist = [float(x) for x in numlist]"}
+{"src": "Removing index column in pandas", "tgt": "df.to_csv(filename, index=False)"}
+{"src": "How to convert a string data to a JSON object in python?", "tgt": "json_data = json.loads(unescaped)"}
+{"src": "Is there a Python Library that contains a list of all the ascii characters?", "tgt": "[chr(i) for i in range(127)]"}
+{"src": "Python how to write to a binary file?", "tgt": "newFile.write(struct.pack('5B', *newFileBytes))"}
+{"src": "Python Regex - checking for a capital letter with a lowercase after", "tgt": "re.sub('^[A-Z0-9]*(?![a-z])', '', string)"}
+{"src": "Last Key in Python Dictionary", "tgt": "list(dict.keys())[-1]"}
+{"src": "write line to file", "tgt": "print('hi there', file=f)"}
+{"src": "write line to file", "tgt": "f = open('myfile', 'w')\nf.write('hi there\\n')\nf.close()"}
+{"src": "write line to file", "tgt": "with open('somefile.txt', 'a') as the_file:\n    the_file.write('Hello\\n')"}
+{"src": "Python - Unicode to ASCII conversion", "tgt": "s.encode('iso-8859-15')"}
+{"src": "How to get max value in django ORM", "tgt": "AuthorizedEmail.objects.filter(group=group).order_by('-added')[0]"}
+{"src": "Python regex findall numbers and dots", "tgt": "re.findall('Test([0-9.]*[0-9]+)', text)"}
+{"src": "Python regex findall numbers and dots", "tgt": "re.findall('Test([\\\\d.]*\\\\d+)', text)"}
+{"src": "Is there a way to run powershell code in python", "tgt": "os.system('powershell.exe', 'script.ps1')"}
+{"src": "Sorting a dictionary of tuples in Python", "tgt": "b.sort(key=lambda x: x[1][2])"}
+{"src": "How do I get all the keys that are stored in the Cassandra column family with pycassa?", "tgt": "list(cf.get_range().get_keys())"}
+{"src": "how to create a file name with the current date & time in python?", "tgt": "datetime.datetime.now()"}
+{"src": "How to get the index of an integer from a list if the list contains a boolean?", "tgt": "next(i for i, x in enumerate(lst) if not isinstance(x, bool) and x == 1)"}
+{"src": "Subtract a value from every number in a list in Python?", "tgt": "a[:] = [(x - 13) for x in a]"}
+{"src": "Best way to choose a random file from a directory", "tgt": "random.choice(os.listdir('C:\\\\'))"}
+{"src": "How to get the highest element in absolute value in a numpy matrix?", "tgt": "max(x.min(), x.max(), key=abs)"}
+{"src": "Using Regular Expressions to extract specific urls in python", "tgt": "re.findall('\"(http.*?)\"', s, re.MULTILINE | re.DOTALL)"}
+{"src": "Using Regular Expressions to extract specific urls in python", "tgt": "re.findall('http://[^t][^s\"]+\\\\.html', document)"}
+{"src": "Is there a function in Python to split a string without ignoring the spaces?", "tgt": "mystring.replace(' ', '! !').split('!')"}
+{"src": "Open file in Python", "tgt": "open(path, 'r')"}
+{"src": "Sum of multiple list of lists index wise", "tgt": "[[sum(item) for item in zip(*items)] for items in zip(*data)]"}
+{"src": "numpy: syntax/idiom to cast (n,) array to a (n, 1) array?", "tgt": "a[:, (np.newaxis)]"}
